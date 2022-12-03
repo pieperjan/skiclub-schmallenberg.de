@@ -1,0 +1,9 @@
+div.icongroup {
+    > div.icongroup-item {
+        > div.icongroup-item-text {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

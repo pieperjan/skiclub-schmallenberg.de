@@ -1,0 +1,211 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+
+	<f:if condition="{records}">
+		<f:variable name="imageConfig">
+			{settings.responsiveimages.contentelements.card_group.{data.pi_flexform.columns}}
+		</f:variable>
+		<bk2k:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}"
+								 gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}"/>
+
+		<f:switch expression="{data.layout}">
+			<f:case value="100">
+
+				<div class="card-group-element card-group-element-align-{data.pi_flexform.align} card-group-element-columns-{data.pi_flexform.columns}">
+					<f:for each="{records}" as="item" iteration="iteration">
+
+						<div class="card-group-element-item width-{item.data.card_width}">
+							<div class="card {item.data.card_layout} {item.data.card_background}">
+								<f:render section="LinkWrap"
+										  arguments="{link: item.data.link, linkTitle: item.data.header}"
+										  contentAs="content">
+																	<f:if condition="{item.image.0}">
+									<div class="card-img-top">
+
+										<f:render partial="Media/Rendering/Image"
+												  arguments="{file: item.image.0, data: data, settings: settings, variants: variants}"/>
+
+									</div>
+								</f:if>
+								<div class="card-body">
+									<h3 class="card-title">
+
+										{item.data.header}
+
+										<f:if condition="{item.data.subheader}">
+											<small class="card-subtitle">{item.data.subheader}</small>
+										</f:if>
+									</h3>
+									<f:if condition="{item.data.bodytext}">
+										<f:format.html>{item.data.bodytext}</f:format.html>
+									</f:if>
+								</div>
+								<f:if condition="{item.data.link}">
+									<f:variable name="linkTitle">
+										<f:if condition="{item.data.link_title}">
+											<f:then>{item.data.link_title}</f:then>
+											<f:else>
+												<f:translate key="readmore" extensionName="bootstrap_package"/>
+											</f:else>
+										</f:if>
+									</f:variable>
+									<div class="card-footer">
+										<f:link.typolink parameter="{item.data.link}"
+														 class="btn btn-{item.data.link_class}"
+														 title="{linkTitle -> bk2k:format.trim()}">
+											<f:if condition="{item.linkIcon.0}">
+                                                <span class="btn-icon">
+                                            <bk2k:inlineSvg image="{item.linkIcon.0}"/>
+                                        </span>
+											</f:if>
+											<span class="btn-text">
+                                        {linkTitle}
+                                    </span>
+										</f:link.typolink>
+									</div>
+								</f:if>
+
+								</f:render>
+
+							</div>
+						</div>
+					</f:for>
+				</div>
+			</f:case>
+			<f:case value="101">
+				<div class="card-group-element card-group-element-vertical card-group-element-align-{data.pi_flexform.align} card-group-element-columns-{data.pi_flexform.columns}">
+					<f:for each="{records}" as="item" iteration="iteration">
+						<div class="card row">
+							<f:if condition="{item.image.0}">
+								<div class="card-img col-xs-11 col-sm-9 col-md-3 col-lg-3 col-xl-3">
+									<f:render section="LinkWrap"
+											  arguments="{link: item.data.link, linkTitle: item.data.header}"
+											  contentAs="content">
+										<f:render partial="Media/Rendering/Image"
+												  arguments="{file: item.image.0, data: data, settings: settings, variants: variants}"/>
+									</f:render>
+								</div>
+							</f:if>
+							<div class="card-body col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+								<h3 class="card-title">
+									<f:render section="LinkWrap"
+											  arguments="{link: item.data.link, linkTitle: item.data.header}"
+											  contentAs="content">
+										<f:format.raw>{item.data.header}</f:format.raw>
+									</f:render>
+									<f:if condition="{item.data.subheader}"><small class="card-subtitle">
+										<f:format.raw>{item.data.subheader}</f:format.raw>
+									</small></f:if>
+								</h3>
+								<f:if condition="{item.data.bodytext}">
+									<f:format.raw>{item.data.bodytext}</f:format.raw>
+								</f:if>
+							</div>
+							<f:if condition="{item.data.link}">
+								<f:variable name="linkTitle">
+									<f:if condition="{item.data.link_title}">
+										<f:then>{item.data.link_title}</f:then>
+										<f:else>
+											<f:translate key="readmore" extensionName="bootstrap_package"/>
+										</f:else>
+									</f:if>
+								</f:variable>
+								<div class="card-footer col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+									<f:link.typolink parameter="{item.data.link}" class="btn btn-{item.data.link_class}"
+													 title="{linkTitle -> bk2k:format.trim()}">
+										<f:if condition="{item.linkIcon.0}">
+                                            <span class="btn-icon">
+                                            <bk2k:inlineSvg image="{item.linkIcon.0}"/>
+                                        </span>
+										</f:if>
+										<span class="btn-text">
+                                        {linkTitle}
+                                    </span>
+									</f:link.typolink>
+								</div>
+							</f:if>
+						</div>
+					</f:for>
+				</div>
+			</f:case>
+			<f:defaultCase>
+				<div class="card-group-element card-group-element-align-{data.pi_flexform.align} card-group-element-columns-{data.pi_flexform.columns}">
+					<f:for each="{records}" as="item" iteration="iteration">
+						<div class="card-group-element-item">
+							<div class="card">
+								<f:if condition="{item.image.0}">
+									<div class="card-img-top">
+										<f:render section="LinkWrap"
+												  arguments="{link: item.data.link, linkTitle: item.data.header}"
+												  contentAs="content">
+											<f:render partial="Media/Rendering/Image"
+													  arguments="{file: item.image.0, data: data, settings: settings, variants: variants}"/>
+										</f:render>
+									</div>
+								</f:if>
+								<div class="card-body">
+									<h3 class="card-title">
+										<f:render section="LinkWrap"
+												  arguments="{link: item.data.link, linkTitle: item.data.header}"
+												  contentAs="content">
+											{item.data.header}
+										</f:render>
+										<f:if condition="{item.data.subheader}">
+											<small class="card-subtitle">{item.data.subheader}</small>
+										</f:if>
+									</h3>
+									<f:if condition="{item.data.bodytext}">
+										<f:format.html>{item.data.bodytext}</f:format.html>
+									</f:if>
+								</div>
+								<f:if condition="{item.data.link}">
+									<f:variable name="linkTitle">
+										<f:if condition="{item.data.link_title}">
+											<f:then>{item.data.link_title}</f:then>
+											<f:else>
+												<f:translate key="readmore" extensionName="bootstrap_package"/>
+											</f:else>
+										</f:if>
+									</f:variable>
+									<div class="card-footer">
+										<f:link.typolink parameter="{item.data.link}"
+														 class="btn btn-{item.data.link_class}"
+														 title="{linkTitle -> bk2k:format.trim()}">
+											<f:if condition="{item.linkIcon.0}">
+                                                <span class="btn-icon">
+                                            <bk2k:inlineSvg image="{item.linkIcon.0}"/>
+                                        </span>
+											</f:if>
+											<span class="btn-text">
+                                        {linkTitle}
+                                    </span>
+										</f:link.typolink>
+									</div>
+								</f:if>
+							</div>
+						</div>
+					</f:for>
+				</div>
+			</f:defaultCase>
+		</f:switch>
+	</f:if>
+
+</f:section>
+
+<f:section name="LinkWrap">
+
+	<f:if condition="{link}">
+		<f:then>
+			<f:link.typolink parameter="{link}" title="{linkTitle -> bk2k:format.trim()}">{content -> f:format.raw()}
+			</f:link.typolink>
+		</f:then>
+		<f:else>
+			{content -> f:format.raw()}
+		</f:else>
+	</f:if>
+
+</f:section>
+
+</html>

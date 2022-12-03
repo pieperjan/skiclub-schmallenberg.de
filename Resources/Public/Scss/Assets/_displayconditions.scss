@@ -1,0 +1,33 @@
+//
+// * Display Conditions
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+@include media-breakpoint-only(xs) {
+    .d-xs-hidden {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-only(sm) {
+    .d-sm-hidden {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .d-md-hidden {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-only(lg) {
+    .d-lg-hidden {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-only(xl) {
+    .d-xl-hidden {
+        display: none !important;
+    }
+}

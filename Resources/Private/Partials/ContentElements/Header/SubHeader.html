@@ -1,0 +1,7 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{subheader}">
+    <small class="h{f:if(condition: '{settings.header.defaultHeaderType} == 1',then: '2', else: '{settings.header.defaultHeaderType + 1}')} {class} {positionClass}">
+        <f:format.htmlentitiesDecode>{subheader}</f:format.htmlentitiesDecode>
+    </small>
+</f:if>
+</html>

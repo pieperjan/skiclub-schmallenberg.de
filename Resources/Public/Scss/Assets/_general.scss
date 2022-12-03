@@ -1,0 +1,18 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+
+body .border-primary, body .card-panel-primary {
+    border-color: $color-1 !important;
+}
+
+::-moz-selection { 
+    color:$white; 
+    background:$color-1; 
+    text-shadow: none; 
+ }
+ 
+ ::selection { 
+    color:$white; 
+    background:$color-1;  
+    text-shadow: none; 
+ }

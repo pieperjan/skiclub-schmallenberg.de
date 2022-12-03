@@ -1,0 +1,78 @@
+//
+// Variables
+//
+//
+// * Color
+//
+$color-1: #0B2E3F !default;
+$color-1-light: #89BAD9 !default;
+$color-2: #096F8B !default;
+$color-3: #2C7BBF !default;
+$black: #525252;
+$white: #fff;
+$text-color: #f7f7f7;
+$box-shadow-color: rgba(0, 0, 0, .33);
+$outline-color: $color-1;
+// * Color Dark Mode
+$bg-dark: $color-1; 
+$bg-dark-light: rgba(255,255,255,.06); 
+
+
+
+//
+// * Typografie
+//
+$mainfont: 'Outfit', sans-serif;
+$font-size-text: 18px;
+$font-size-text-mobile: 16px;
+$font-weight-text: 300;
+//
+// * Padding
+//
+$navitem-padding: 25px;
+
+
+//
+// ! Abstandsvariablen 
+//
+$padding-extra-small: 20px;
+$padding-small: 40px;
+$padding-medium: 60px;
+$padding-large: 80px;
+$padding-extra-large: 150px;
+
+$padding-small-tablet: 20px;
+$padding-medium-tablet: 30px;
+$padding-large-tablet: 40px;
+$padding-extra-large-tablet: 70px;
+
+$padding-extra-small-mobile: 10px;
+$padding-small-mobile: 10px;
+$padding-medium-mobile: 20px;
+$padding-large-mobile: 30px;
+$padding-extra-large-mobile: 40px;
+
+//
+// ? Variables
+//
+$padding-desktop: 16vw;
+$padding-tablet: 10vw;
+$padding-mobile: 30px;
+//@import "../../../../bootstrap_package/Resources/Public/Contrib/bootstrap5/scss/functions";
+
+// Custom Breakpoints
+$grid-breakpoints: (
+  xs: 360,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1360px,
+  xxxl: 1600px,
+  fullhd: 1920px,
+  wqhd: 2560px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+

@@ -1,0 +1,52 @@
+//
+// * Basic Style Headlines
+//
+body,
+html {
+    font: {
+        family: $mainfont;
+        size: $font-size-text;
+        weight: $font-weight-text;
+    }
+}
+
+body {
+    small {
+        display: block;
+    }
+    p, li, a {
+        color: $color-1;
+        line-height: 1.35 !important;
+    }
+    a {
+             
+
+        @include transition(color 200ms ease-in-out);
+        &:hover, &:focus, &:focus-within {
+            color: $color-1;  
+        }
+      
+    }
+
+
+
+
+    .text-primary {
+        color: $color-1 !important;
+    }
+}
+
+
+html {
+    body {
+        div.body-bg {
+            .frame-header {
+                margin-bottom: 0;
+                .element-header {
+                    margin-bottom: 20px; 
+                }
+            }
+         
+        }
+    }
+}

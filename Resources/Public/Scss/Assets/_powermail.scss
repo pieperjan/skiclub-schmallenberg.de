@@ -1,0 +1,376 @@
+//
+// * Masornry
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.tx-powermail {
+    .powermail_create {
+        table.table {
+            td {
+                color: $white;
+            }
+            tr:nth-of-type(odd) {
+                background-color: rgba(255,255,255, .1);
+            }
+        }
+    }
+    >div.container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+        > form {
+            &.powermail_morestep {
+                div.btn-group {
+                    display: none;
+                }
+                div.powermail_fieldwrap.powermail_tab_navigation {
+                    margin-bottom: 0;
+                    margin-right: auto;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    a {
+                        margin: 0;
+                        &.btn {
+                            padding: 10px;
+                            margin-right: 15px;
+                            width: 50px;
+                            height: 50px;
+                            padding: 0;
+                            border-radius: 50%;
+                        }
+                        &.btn-warning {}
+                        &.btn-primary {}
+                    }
+                }
+            }
+            >fieldset.powermail_fieldset {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                >legend.powermail_legend {
+                    font-weight: 500;
+                    margin-bottom: 30px;
+                    color: $white;
+                }
+                >div.powermail_fieldwrap {
+                    position: relative;
+                    margin-bottom: 30px;
+                    // ! Big Checkbox 
+                    &.bigbox {
+                        .powermail_field {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-orient: horizontal;
+                            -webkit-box-direction: normal;
+                            -ms-flex-direction: row;
+                            flex-direction: row;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            .checkbox {
+                                margin-right: 10px;
+                                margin-bottom: 10px;
+                                border: 1px solid #e3e3e3;
+                                background-color: #fff;
+                                color: #000;
+                                border-radius: 19px;
+                                * {
+                                    color: black;
+                                }
+                                label {
+                                    padding: 20px;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 15px;
+                    }
+                     &.thirtythreewidth { 
+                        width: calc(33% - 5px);
+                        @include media-breakpoint-down(sm) {
+                            width: 100%;
+                        }
+                     }
+                     &.sixtysixwidthwidth {
+                        width: calc(66% - 5px);
+                        @include media-breakpoint-down(sm) {
+                            width: 100%;
+                        }
+                      }
+                    &.fullwidth {
+                        width: 100%;
+                        color: white;
+                    }
+                    &.halfwidth {
+                        float: left;
+                        width: calc(50% - 5px);
+                        @include media-breakpoint-down(sm) {
+                            width: 100%;
+                        }
+                    }
+                    &.budget {
+                        width: 100%;
+                        @include media-breakpoint-down(md) {
+                            margin-top: 80px;
+                        } 
+                        label.powermail_label {
+                            position: relative;
+                            
+                        }
+                        * {
+                            color: $white;
+                        }
+                      
+                        .powermail_field {
+
+                            display: flex;
+                            width: 100%;
+                            align-items: center;
+                            div.wrap-output {
+                                position: absolute;
+                                left: 50%;
+                                top: -30px;
+                                color: $white;
+                                width: 100%;
+                                text-align: center;
+                                font: {
+                                    size: 45px;
+                                    weight: bold;
+                                }
+                                line-height: 49px; 
+                                -webkit-transform: translateX(-50%);  
+                                -ms-transform: translateX(-50%);  
+                                transform: translateX(-50%);
+                                @include media-breakpoint-down(md) {
+                                    top: -80px;
+                                } 
+                            }
+                            input[type="range"] {
+                                padding: 0;
+                                margin: 0 15px;
+                                background-color: #918d8d;    
+                                border: 0;       
+                            }
+                            input[type=range] {
+                                -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+                                width: 100%; /* Specific width is required for Firefox. */
+                                background: #918d8d; /* Otherwise white in Chrome */
+                              }
+                              
+                              input[type=range]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                              }
+                              
+                              input[type=range]:focus {
+                                outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+                              }
+                              
+                              input[type=range]::-ms-track {
+                                width: 100%;
+                                cursor: pointer;
+                              
+                                /* Hides the slider so custom styles can be added */
+                                background: #f7f7f7; 
+                                border-color: transparent;
+                                color: transparent;
+                              }
+                            /* Special styling for WebKit/Blink */
+                            input[type=range]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                            
+                                height: 36px;
+                                width: 16px;
+                                border-radius: 3px;
+                                background: #ffffff;
+                                cursor: pointer;
+                                margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                                box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+                            }
+                            
+                            /* All the same stuff for Firefox */
+                            input[type=range]::-moz-range-thumb {
+                                box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+                              
+                                height: 36px;
+                                width: 16px;
+                                border-radius: 3px;
+                                background: #ffffff;
+                                cursor: pointer;
+                            }
+                            
+                            /* All the same stuff for IE */
+                            input[type=range]::-ms-thumb {
+                                box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+                                border: 1px solid #000000;
+                                height: 36px;
+                                width: 16px;
+                                border-radius: 3px;
+                                background: #ffffff;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    &.powermail_fieldwrap_type_check {
+                        .powermail_label {
+                            position: relative;
+                            padding-left: 0;
+                            color: $white;
+                        }
+                        * {
+                            color: $white;
+                        }
+                        input {
+                            margin-right: 10px;
+                        }
+                    }
+                    .powermail_label {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 16px 21px 16px 21px;
+                        margin: 0;
+                        font-weight: bold;
+                        color: $bg-dark;
+                        z-index: 10;
+                        pointer-events: none;
+                        
+
+                        @include media-breakpoint-down(xl) {
+                            padding: 19px 21px 19px 21px;
+                            font-size: 12px;
+                        }
+                        @include media-breakpoint-down(md) {
+                            display: none !important;
+                        }
+                    }
+                    &.powermail_fieldwrap_type_radio {
+                        .powermail_label{
+                            display: none;
+                        } 
+                        div.radio {
+                            label {
+                                color: white;
+                            }
+                        }
+                    }
+                    &.powermail_fieldwrap_type_reset {
+                        .powermail_reset {
+                            margin: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                    .powermail_field {
+                        margin-bottom: 16px;
+
+                        header.frame-header {
+                            margin-bottom: 15px;
+                        }
+                       
+                        .powermail_input,
+                        .powermail_textarea {
+                            padding: 14px 21px 14px 140px;
+                            width: 100%;
+                            border-radius: 20px;
+                            -webkit-border-radius: 20px;
+                            -moz-border-radius: 20px;
+                            -ms-border-radius: 20px;
+                            -o-border-radius: 20px;
+                            border: 2px solid $outline-color;
+                            color: $black;
+                            transition: 400ms all ease-in-out;
+                            @include media-breakpoint-down(xl) {
+                                padding: 14px 21px 14px 100px;
+                            }
+                            @include media-breakpoint-down(md) {
+                                padding: 14px 21px;
+                            }
+                            &:focus-visible,
+                            &:focus-within, 
+                            &:focus,
+                            &:hover {
+                                border: 2px solid $color-1;
+                                outline: 0;    
+                            }
+                            ::placeholder {
+                                color: $black;
+                              }
+                            }
+                        .powermail_textarea {
+                            padding: 55px 21px 14px 21px;
+                            width: 100%;
+                            border-radius: 19px;
+                            -webkit-border-radius: 19px;
+                            -moz-border-radius: 19px;
+                            -ms-border-radius: 19px;
+                            -o-border-radius: 19px;
+                            border: 1px solid $outline-color;
+                            color: $black;
+                        }
+                        .powermail_submit {
+                            padding: 12px 32px;
+                            margin: 0; 
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font: {
+                                size: 18px;
+                                weight: 600;
+                            }
+                            border-radius: 19px;
+                            text-transform: uppercase;
+                            background-color: $color-1;
+                            border: 0;
+                            color: $white; 
+                            @include media-breakpoint-down(lg) {
+                              
+                            }
+                            @include media-breakpoint-down(md) {
+                                font-size: 14px;
+                            }
+                            @include transition(all 350ms ease-in-out);
+                            &:hover, 
+                            &:focus, 
+                            &:focus-within {
+                                transform: translateY(-5px);
+                            }
+                        }
+                        .powermail_reset {
+                            background-color: transparent;
+                            border: 0;
+                            color: $white;
+                        }
+           
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+// Fehlermeldungen
+ul.parsley-errors-list {
+    padding: 9px;
+    margin-top: 9px;
+    margin-block-start: 0;
+    margin-block-end: 0; 
+    list-style: none;
+    background-color: $color-1;
+    border: 2px solid darken($color-1, 20%);
+    border-radius: 19px;
+    li {
+        font-size: 14px;
+        color: white;
+        &.parsley-required {
+
+        }
+    }                    
+} 

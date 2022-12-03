@@ -1,0 +1,37 @@
+//
+// * Gallery
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+div.frame-layout-logo {}
+
+div.gallery {
+    figure.image {
+        picture {
+            box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+            -webkit-box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+            -moz-box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+        }
+    }
+    &.gallery-logo {
+        >div.gallery-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            >div.gallery-item {
+                margin-bottom: 8px;
+                width: 26vw;
+                >figure.image {
+                    picture {
+                        box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+                        -webkit-box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+                        -moz-box-shadow: 1px -1px 64px -44px rgba(0,0,0,0.64);
+                    
+                    }
+                }
+            }
+        }
+    }
+}

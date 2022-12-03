@@ -1,0 +1,30 @@
+div.frame.frame-layout-clock {
+    border-radius: 19px;
+    > div.frame-container {
+        > div.frame-inner {
+            padding: 70px;
+            @media (max-width: 1361px) {
+                padding: 40px;  
+            }
+            @include media-breakpoint-down(md) {
+                margin-top: 50px;
+            }
+            @include media-breakpoint-down(xs) {
+                padding: 20px; 
+            }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @media (min-width: 1361px) {
+                div.wrap-text {
+                    margin-right: 30px;
+                }
+            }
+            #MyClockDisplay {
+            
+            }
+        }
+    }
+}
+

@@ -1,0 +1,24 @@
+//
+// * Panel
+//
+
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.card {
+   
+    &.card-panel {
+       
+        border: 0;
+        border-radius: 19px;
+    }
+    &.card-panel-primary {
+       
+        border-left: 3px solid $color-1;
+    }
+    div.card-body {
+        padding: 45px 45px 45px 30px;
+    }
+    p {
+        color: $black;
+    }
+}

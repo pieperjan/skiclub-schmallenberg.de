@@ -1,0 +1,54 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+.listgroup {
+    &.listgroup-leistungen {
+        ul.list-group {
+            display: inline-block;
+            li.list-group-item {
+                padding: 12px 32px;
+                margin-right: 11px;
+                margin-bottom: 20px;
+                display: inline-block;
+                border-radius: 19px;
+                border: 3px solid white;
+                color: white;
+                background-color: transparent;
+            }
+            a {
+                padding: 12px 32px;
+                margin-right: 11px;
+                margin-bottom: 20px;
+                display: inline-flex;
+                justify-content: center;
+                border-radius: 19px;
+                border: 3px solid white;
+                color: #27211f;
+                background-color: white;
+                transition: 400ms all ease-in-out;
+                svg {
+                    margin-left: 24px;
+                    align-self: center;
+                    path {
+                        transition: 400ms all ease-in-out;
+                    }
+                }
+
+                &:hover, 
+                &:focus, 
+                &:focus-within {
+                    text-decoration: none;
+                    transform: translateY(-5px);
+                    border: 3px solid $color-1;
+                    background-color: $color-1;
+                    color: white;
+                    box-shadow: none;
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

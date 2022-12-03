@@ -1,0 +1,88 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.hero-background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+        height: 61vh;
+    }
+    @media (max-width: 767.98px) and (orientation: landscape) {
+        height: 90vh;
+    }
+    @include media-breakpoint-down(xs) {
+        height: 90vh;
+    }
+    .line {
+        position: absolute;
+        bottom: -47px;
+        left: 50%;
+        transform: translateX(-50%);
+        svg {
+            height: auto;
+            @media (max-width: 1600px){
+                width: 26px;
+            }
+            @include media-breakpoint-down(md) {
+                display: none !important;
+            }
+        }
+    }
+    .ellipse {
+        position: absolute;
+        svg {
+            height: auto;
+            @media (max-width: 1600px){
+                width: 200px;
+            }
+            @include media-breakpoint-down(lg) {
+                width: 150px;
+            }
+        }
+        &.ellipse-top {
+            top: -30px;
+            left: 30vw;
+            @media (max-width: 1600px){
+                display: none !important;
+                opacity: 0;
+                visibility: hidden;
+            }
+            svg {
+                
+            }
+        }
+       
+        &.ellipse-bottom {
+            bottom: 0;
+            right: 31vw;
+
+
+            @include media-breakpoint-down(xs) {
+                bottom: 15vh;
+                left: -7vw; 
+                right: unset;
+            }
+            
+        }
+
+    }
+    .bildmarke {
+        position: absolute;
+        right: 5vw;
+        bottom: -47px;
+        svg {
+            height: auto;
+            @media (max-width: 1600px){
+                width: 400px;
+            }
+            text-transform: uppercase;
+            @include media-breakpoint-down(lg) {
+                width: 268px;
+                bottom: -23px;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 220px;
+            }
+        }
+    }
+}

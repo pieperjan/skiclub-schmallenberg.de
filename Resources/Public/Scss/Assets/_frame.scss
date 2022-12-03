@@ -1,0 +1,431 @@
+//
+// * Frame
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+html body.layout-default {
+    background-color: white;
+    overflow-x: hidden;
+    div.body-bg {
+        padding-top: 0;
+        &.home-not {
+            padding-top: 70px;
+            @include media-breakpoint-down(sm) {
+                padding-top: 0;
+            }
+        }
+    } 
+}
+.hidden-xs {
+    @include media-breakpoint-down(xs) {
+        display: none !important;
+    }
+}
+.show-xs {
+    @media (min-width: 576px) {
+        display: none !important;
+    }
+}
+
+.frame-layout-colordark {
+    * {
+        color: $color-1;
+    }
+} 
+.section.section-default {
+    overflow: visible;
+}
+
+// ! Default Abstand Links Rechts
+div.frame > div.frame-container,
+div.carousel div.valign,
+footer.bp-page-footer.container,
+.footer-copyright,
+.breadcrumb-section > .container {
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
+
+    @include media-breakpoint-down(md) {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-left: $padding-mobile;
+        padding-right: $padding-mobile;
+    }
+    margin-left: 0;
+    margin-right: 0; 
+    width: 100%;
+    max-width: 100%;
+}
+header.bp-page-header > div.container {
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
+    @include media-breakpoint-down(md) {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-left: $padding-mobile;
+        padding-right: $padding-mobile;
+    }
+    margin-left: 0;
+    margin-right: 0; 
+    width: 100%;
+    max-width: 100%;
+}
+
+
+div.frame {
+    //
+    // ! Rahmen
+    // 
+    &.frame-layout-colorblack  {
+        * {
+            color: $black;
+        }
+        hr {
+            border-top: 3px solid $black; 
+        }
+    }
+    &.frame-layout-verticalmittig {
+        > div.frame-container {
+            > div.frame-inner {
+                > div.row {
+                    > [class*="col"]:first-of-type {   
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+    &.frame-defaultwithoutpadding {
+        >div.frame-container {
+            padding-left: 0;
+            padding-right: 0;
+            >div.row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    &.frame-100height {
+        display: flex;
+        height: 100vh;
+        align-items: center;    
+    }
+    &.frame-100height,
+    &.frame-full_width,
+    &.frame-full_width_padding {
+        
+        >div.frame-container {
+            padding-left: 0;
+            padding-right: 0;
+            >div.frame-inner {
+                >div.row {
+                    margin-left: 0;
+                    margin-right: 0;
+                    >div {
+                        &[class*="col"] {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    
+                    }
+                }
+            }
+        }
+      
+    }
+    &.frame-100height,
+    &.frame-full_width_padding { 
+        padding-left: $padding-desktop;
+        padding-right: $padding-desktop;
+        @include media-breakpoint-down(xl) {
+            padding-left: $padding-tablet;
+            padding-right: $padding-tablet;    
+        }
+        @include media-breakpoint-down(sm) {
+            padding-left: $padding-mobile;
+            padding-right: $padding-mobile;    
+        }
+    }
+    &.frame-background-primaryhalf,
+    &.frame-background-primary {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: 50%;
+            background-color: $color-1;
+            z-index: -1;
+        }
+        p, a, li, h2, h3, h4, h5, small {
+            color: $white;
+        }
+        h1 {
+            color: $white;
+        }
+        a {
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+    &.frame-background-primaryhalf {
+        &:after {
+            height: 50%;
+        }
+    }
+    &.frame-background-primary {
+        background-color: transparent;
+        &:after {
+            height: 100%;
+        }
+    }
+    &.frame-background-light,
+    &.frame-background-dark {
+        &.frame-full_width_padding { 
+            margin-left: $padding-desktop;
+            margin-right: $padding-desktop;
+            @include media-breakpoint-down(xl) {
+                margin-left: $padding-tablet;
+                margin-right: $padding-tablet;    
+            }
+            @include media-breakpoint-down(sm) {
+                margin-left: $padding-mobile;
+                margin-right: $padding-mobile;    
+            }
+        }
+    }
+    &.frame-background-light {
+        &:not(.frame-layout-news) {
+            background: $text-color;
+        }
+        &.frame-layout-news {
+            background: $white;
+            > .frame-container {
+                > .frame-inner {
+                    background: $text-color;
+                }
+            }
+        }
+        
+       h1, h2, h3, h4, h5 {
+            color: $color-3;
+        }  
+    }
+    &.frame-background-gradient-primary {
+        background: rgb(18,85,116);
+        background: linear-gradient(0deg, rgba(18,85,116,0) 0%, rgba(18,85,116,1) 55%);
+        p, a, li, h1, h2, h3, h4, h5, small {
+            color: $white;
+        }
+    }
+    &.frame-default {}
+    &.frame-indent {
+        .frame {
+            .frame-inner {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    &.frame-type-gridelements_pi1 {
+        >div.frame-container {
+            >div.frame-inner {
+                >div.row {
+                    @include media-breakpoint-down(sm) {
+                        &.mobile-row-reverse {
+                            flex-direction: column-reverse;
+                        }
+                    }
+                   
+                }
+            }
+        }
+    }
+    // 
+    // ! Abstände
+    //
+    &.frame-space-before-none {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    &.frame-space-after-none {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+
+    
+
+        // * Before
+        &.frame-space-before-extra-small,
+        &.frame-space-before-small,
+        &.frame-space-before-medium,
+        &.frame-space-before-large,
+        &.frame-space-before-extra-large {
+            margin-top: 0 !important;
+        }
+        &.frame-space-before-extra-small {
+            padding-top: $padding-extra-small !important;
+        }
+        &.frame-space-before-small {
+            @include media-breakpoint-up(xl) {
+                padding-top: $padding-small !important;
+                hr {
+                    padding-top: $padding-small !important;   
+                }
+            }
+            @include media-breakpoint-down(lg) {
+                padding-top: $padding-small-tablet !important;
+                hr {
+                    padding-top: $padding-small-tablet !important;   
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                padding-top: $padding-small-mobile !important;
+                hr {
+                    padding-top: $padding-small-mobile !important;   
+                }
+            }
+        }
+        &.frame-space-before-medium {
+            @include media-breakpoint-up(xl) {
+                padding-top: $padding-medium !important;
+                hr {
+                    padding-top: $padding-medium !important;
+                }
+            }
+            @include media-breakpoint-down(lg) {
+                padding-top: $padding-medium-tablet !important;
+                hr {
+                    padding-top: $padding-medium-tablet !important;
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                padding-top: $padding-medium-mobile !important;
+                hr {
+                    padding-top: $padding-medium-mobile !important;
+                }
+            }
+        }
+        &.frame-space-before-large {
+            @include media-breakpoint-up(xl) {
+                padding-top: $padding-large !important;
+                hr {
+                    padding-top: $padding-large !important;   
+                }
+            }
+            @include media-breakpoint-down(lg) {
+                padding-top: $padding-large-tablet !important;
+                hr {
+                    padding-top: $padding-large-tablet !important;
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                padding-top: $padding-large-mobile !important;
+                hr {
+                    padding-top: $padding-large-mobile !important;
+                }
+            }
+        }
+        &.frame-space-before-extra-large {
+            @include media-breakpoint-up(xl) {
+                padding-top: $padding-extra-large !important;
+                hr {
+                    padding-top: $padding-extra-large !important; 
+                }
+            }
+            @include media-breakpoint-down(lg) {
+                padding-top: $padding-extra-large-tablet !important;
+                hr {
+                    padding-top: $padding-extra-large-tablet !important; 
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                padding-top: $padding-extra-large-mobile !important;
+                hr {
+                    padding-top: $padding-extra-large-mobile !important; 
+                }
+            }
+        }
+            // * After
+        &.frame-space-after-extra-small,
+        &.frame-space-after-small,
+        &.frame-space-after-medium,
+        &.frame-space-after-large,
+        &.frame-space-after-extra-large {
+            margin-bottom: 0 !important;
+        }
+        &.frame-space-after-extra-small {
+            padding-bottom: $padding-extra-small !important;
+           
+        }
+        &.frame-space-after-small {
+            @include media-breakpoint-up(xl) {
+                padding-bottom: $padding-small !important;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-bottom: $padding-small-tablet !important;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-bottom: $padding-small-mobile !important;
+            }
+        }
+        &.frame-space-after-medium {
+            @include media-breakpoint-up(xl) {
+                padding-bottom: $padding-medium !important;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-bottom: $padding-medium-tablet !important;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-bottom: $padding-medium-mobile !important;
+            }
+        }
+        &.frame-space-after-large {
+            @include media-breakpoint-up(xl) {
+                padding-bottom: $padding-large !important;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-bottom: $padding-large-tablet !important;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-bottom: $padding-large-mobile !important;
+            }
+        }
+        &.frame-space-after-extra-large {
+            @include media-breakpoint-up(xl) {
+                padding-bottom: $padding-extra-large !important;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-bottom: $padding-extra-large-tablet !important;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-bottom: $padding-extra-large-mobile !important;
+            }
+        }  
+}
+
+
+
+// !
+// ! Page Content 
+// ! 
+#page-content.bp-page-content {
+    margin-bottom: 500px;
+    background-color: #fff;
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 600px;
+    }
+}

@@ -1,0 +1,106 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:justwebsite-fundament/Configuration/TypoScript/ContentElement/Helper/ContentElement.typoscript">
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        basic = EXT:justwebsite-fundament/Resources/Public/Scss/basic.scss
+    }
+    includeJSFooter {
+        rellax = https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js
+        clock = EXT:justwebsite-fundament/Resources/Public/JavaScript/clock.js
+        navigation = EXT:justwebsite-fundament/Resources/Public/JavaScript/navigation.js
+        missyoutitle = EXT:justwebsite-fundament/Resources/Public/JavaScript/missyoutitle.js
+        particalexplosen = EXT:justwebsite-fundament/Resources/Public/JavaScript/particalexplosen.js
+        lordicon = https://cdn.lordicon.com/lusqsztk.js
+    }
+    10 {
+        templateRootPaths {
+            100 = EXT:justwebsite-fundament/Resources/Private/Templates/Page/
+            110 = EXT:justwebsite-style/Resources/Private/Templates/Page/
+        }
+        partialRootPaths {
+            100 = EXT:justwebsite-fundament/Resources/Private/Partials/Page/
+            110 = EXT:justwebsite-style/Resources/Private/Partials/Page/
+        }
+        layoutRootPaths {
+            100 = EXT:justwebsite-fundament/Resources/Private/Layouts/Page/
+            110 = EXT:justwebsite-style/Resources/Private/Layouts/Page/
+        }
+    }
+}
+
+page.20 = PHP_SCRIPT
+page.20{
+	file = EXT:justwebsite-fundament/Resources/Public//test.php
+}
+
+lib.contentElement {
+    templateRootPaths {
+        100 = EXT:justwebsite-fundament/Resources/Private/Templates/ContentElements/
+        110 = EXT:justwebsite-style/Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        100 = EXT:justwebsite-fundament/Resources/Private/Partials/ContentElements/
+        110 = EXT:justwebsite-style/Resources/Private/Partials/ContentElements/
+    }
+    layoutRootPaths {
+        100 = EXT:justwebsite-fundament/Resources/Private/Layouts/ContentElements/
+        110 = EXT:justwebsite-style/Resources/Private/Layouts/ContentElements/
+    }
+}
+
+tt_content.gridelements_pi1 {
+    dataProcessing {
+        10 {
+            default {
+                options {
+                    resolveChildFlexFormData = 0
+                }
+            }
+        }
+    }
+}
+
+plugin {
+    tx_blog {
+        view {
+            templateRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Templates/Blog/
+                3 = EXT:justwebsite-style/Resources/Private/Templates/Blog/
+            }
+            partialRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Partials/Blog/
+                3 = EXT:justwebsite-style/Resources/Private/Partials/Blog/
+            }
+            layoutRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Layouts/Blog/
+                3 = EXT:justwebsite-style/Resources/Private/Layouts/Blog/
+            }
+        }
+    }
+    tx_powermail {
+        view {
+             templateRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Templates/Powermail/
+                3 = EXT:justwebsite-style/Resources/Private/Templates/Powermail/
+            }
+            partialRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Partials/Powermail/
+                3 = EXT:justwebsite-style/Resources/Private/Partials/Powermail/
+            }
+            layoutRootPaths {
+                2 = EXT:justwebsite-fundament/Resources/Private/Layouts/Powermail/
+                3 = EXT:justwebsite-style/Resources/Private/Layouts/Powermail
+            }
+        }
+    }
+}
+
+lib.justwebsite.kapazitaetenampel = {$plugin.justwebsite.kapazitaetenampel}
+lib.justwebsite.stundensatz = {$plugin.justwebsite.stundensatz}

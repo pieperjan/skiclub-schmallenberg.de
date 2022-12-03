@@ -1,0 +1,82 @@
+a.webcam {
+    display: block;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+// ! Wetter
+.wrap-weather {
+    @include media-breakpoint-up(sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    margin-bottom: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;  
+    flex-wrap: wrap;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    @include media-breakpoint-down(sm) {
+        border-radius: 15px;    
+    }
+    border: 1px solid #e3e3e3;
+
+    [class*="value-"] {
+        padding: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+   
+        @include media-breakpoint-down(xl) {
+            -webkit-box-orient: vertical;         
+            -webkit-box-direction: normal;         
+            -ms-flex-direction: column;         
+            flex-direction: column;
+        }
+        width: 25%;
+        @include media-breakpoint-down(sm) {
+            padding: 20px 30px;
+            width: 50% !important;   
+        }
+
+        @include media-breakpoint-up(sm) {
+            &:not(:last-of-type) {
+                border-right: 1px solid #e3e3e3;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            &:nth-of-type(odd) {
+                border-right: 1px solid #e3e3e3; 
+            } 
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                border-top: 1px solid #e3e3e3;
+            }
+        }
+   
+        b {
+            padding-right: 7px; 
+            font: {
+                weight: bold;
+            }
+        }
+        span.value {
+            display: block;
+        }
+    }
+}

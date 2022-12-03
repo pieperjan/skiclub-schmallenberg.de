@@ -1,0 +1,63 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:justwebsite-fundament/Resources/Public/Images/logo.svg
+        fileInverted = EXT:justwebsite-fundament/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = justwebsite-fundament
+        linktitle = justwebsite-fundament
+    }
+     preloader {
+        enable = 0
+    }
+    theme {
+        cookieconsent {
+            # cat=bootstrap package: cookie consent/240/01_enable; type=boolean; label=Enable Cookie Consent: For more information about this solution please head over to https://cookieconsent.insites.com/
+            enable = 0
+        }
+        googleFont {
+            enable = 0
+        }
+        meta {
+            enable = 1
+            navigationValue = 91, 92, 93
+        }
+    }
+}
+
+##############
+### CONFIG ###
+##############
+config {
+    headerComment = Hey, diese Seite wurde von Jan Pieper entworfen und umgesetzt, falls du mehr über mich erfahren möchtest oder auch eine Website benötigst, dann schreibe mich doch einfach an >>> hallo@pieperjan.de
+}
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    settings {
+        # cat=bootstrap package: css parser/190/100; type=boolean; label=Override Parser Variables: If enabled the variables defined in your LESS/Scss files will be overridden with the ones defined as TypoScript Constants.
+        overrideParserVariables = 0
+    }
+}
+
+
+lib.justwebsite {
+    # customsubcategory=justwebsite=JustWebsite
+
+    # cat=advanced/justwebsite/h1; type=options[keine Kapzitäten,wenig Kapaziäten frei, Kapazitäten frei]; label=Kapazitätenampel
+    kapazitaetenampel = 0
+
+    # cat=advanced/justwebsite/h2; type=string; label=Stundensatz
+    stundensatz = 0
+}

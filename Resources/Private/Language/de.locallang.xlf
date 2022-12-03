@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2020-03-06UTC10:19:070">
+        <header>
+            <authorName>Netzpepper</authorName>
+            <authorEmail>technik@netzpepper.de</authorEmail>
+        </header>
+        <body>
+
+            <!-- Ausgabebedingung -->
+            <trans-unit id="content_elements.displayconditions_default">
+                  <target>Standardmäßig ausgeben</target>
+              </trans-unit>
+
+            <trans-unit id="content_elements.displayconditions">
+                 <target>Ausgabebedingungen</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element">
+                 <target>Element verstecken</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.xs">
+                 <target>kleinen Smartphones</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.sm">
+                 <target>Smartphones</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.md">
+                 <target>Tablet</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.lg">
+                 <target>Desktop</target>
+             </trans-unit>
+
+                <trans-unit id="content_elements.hide_element.xl">
+                  <target>großer Desktop</target>
+              </trans-unit>
+
+             <trans-unit id="content_elements.no_print">
+                 <target>Nicht drucken</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hidden">
+                 <target>Verstecken</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.show">
+                 <target>Anzeigenn</target>
+             </trans-unit>
+        </body>
+    </file>
+</xliff>

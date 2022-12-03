@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-03-06UTC10:19:070">
+        <header>
+            <authorName>Netzpepper</authorName>
+            <authorEmail>technik@netzpepper.de</authorEmail>
+        </header>
+        <body>
+
+            <!-- Ausgabebedingung -->
+            <trans-unit id="content_elements.displayconditions">
+                 <target>Ausgabebedingungen</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element">
+                 <target>Element verstecken</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.xs">
+                 <target>Smartphone</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.sm">
+                 <target>Tablet</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.md">
+                 <target>Desktop</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.hide_element.lg">
+                 <target>Großer Desktop</target>
+             </trans-unit>
+
+             <trans-unit id="content_elements.no_print">
+                 <target>Nicht drucken</target>
+             </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

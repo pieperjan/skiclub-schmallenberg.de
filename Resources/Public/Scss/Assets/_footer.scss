@@ -1,0 +1,195 @@
+//
+// * Display Conditions
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+footer.bp-page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    padding-bottom: 0;
+    .footer-copyright {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: $color-2;
+        * {
+            color: white;
+        }
+    }
+      .footer-content {
+          // ! Abstand links rechts anpassen
+          > .frame {
+              > .frame-container {
+                  padding-left: 0;
+                  padding-right: 0;
+                  .frame-inner {
+                      > .row {
+                          > [class*="col"] {
+                              @include media-breakpoint-up(lg) {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-orient: horizontal;
+                                -webkit-box-direction: normal;
+                                -ms-flex-direction: row;
+                                flex-direction: row;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                justify-content: center;
+                              }
+                            
+                            >.frame { 
+                                @include media-breakpoint-up(lg) {
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    min-width: 350px;
+                                }
+                                @include media-breakpoint-down(md) {
+                                    margin-bottom: 30px;
+                                  }
+                            }
+                          }
+                      }
+                  }
+              }
+          }
+  
+          // Öffnungszeiten 
+          .table-responsive {
+              .table {
+                  tbody {
+                      tr {
+                          border-radius: 50px;
+                          margin-bottom: 3px;
+                          color: white;
+  
+                          td {
+                              padding: 13px 0;
+                              border-top: 0;
+                          }
+                      }
+                  }
+              }
+          }
+          // ! Seitenenu  
+          ul {
+              margin-block-start: 0;
+              margin-block-end: 0;
+              padding-inline-start: 0;
+              list-style-type: none;
+              li {
+                  margin-bottom: 6px;
+                  @include transition(all 150ms ease-in-out);
+                  a {
+                      @include media-breakpoint-up(lg) {
+                          font-size: 24px;
+                      }
+                      color: white;
+                      font-weight: bold; 
+                      text-decoration: none;
+                      &:hover, 
+                      &:focus, 
+                      &:focus-within {
+                          color: $black;
+                      }
+                  }
+                  @include media-breakpoint-up(lg) {
+                      &:hover, 
+                      &:focus, 
+                      &:focus-within {
+                          -webkit-transform: translateX(5px);
+                          -ms-transform: translateX(5px);
+                          transform: translateX(5px); 
+                          a {
+                              color: #f7f7f7;
+                          }
+                      }
+                  }
+  
+              }
+          }
+      }
+  
+  
+      div.align-center {
+          text-align: center;
+          div.footer-service {
+              div.footer-service-text {
+  
+              }
+              svg {
+                  margin-top: 40px;
+                  width: 68px;
+              }
+          }
+          div.wrap-buttons {
+              margin-bottom: 40px;
+             
+              a.btn {
+                  @include media-breakpoint-down(xs) {
+                      width: 100%;   
+                  }
+                  &.btn-light {
+                      padding: 12px 32px;
+                      margin-right: 11px;
+                      margin-bottom: 20px;
+                      display: inline-flex;
+                      justify-content: center;
+                      border-radius: 19px;
+                      border: 3px solid white;
+                      color: #27211f;
+                      background-color: white;
+                      transition: 400ms all ease-in-out;
+                      box-shadow: none;
+                      svg {
+                          margin-right: 12px;
+                          align-self: center;
+                          path {
+                              transition: 400ms all ease-in-out;
+                          }
+                      }
+      
+                      &:hover, 
+                      &:focus, 
+                      &:focus-within {
+                          text-decoration: none;
+                          transform: translateY(-5px);
+                          border: 3px solid $color-1;
+                          background-color: $color-1;
+                          color: white;
+                          &.mail {
+                              svg {
+                                  path {
+                                      fill: white;
+                                  }
+                              }
+                          }
+                          &.phone {
+                              svg {
+                                  path {
+                                      stroke: white;
+                                  }
+                              }
+                          }
+                         
+                      }
+                  }
+                  
+              }
+          }
+          div.wrap-service {
+              display: flex;
+              justify-content: center;
+              a {
+                  margin-left: 5px;
+                  margin-right: 5px;
+                  &:hover, 
+                  &:focus, 
+                  &:focus-within {
+                      text-decoration: none;
+                  }
+              }
+          }
+      }
+  }

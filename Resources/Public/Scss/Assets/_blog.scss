@@ -1,0 +1,75 @@
+//
+// * Mixins
+//
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+div.postlist {
+    &.postlist--latest {
+        article.postlist__post {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            >a.postlist__featuredimage {
+                
+                >figure.blogimage {
+                    position: relative;
+                    height: 300px;
+                    overflow: hidden;
+                    >img {
+                        object-fit: cover;
+                        height: 100%;
+                        @include transition(all 200ms ease-in-out);
+                    }
+                }
+            }
+            >.postlist__posttitle {
+                margin-top: -40%;
+                font-size: 31px;
+                font-weight: 450;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-align: center;
+                z-index: 2;
+                @include transition(all 200ms ease-in-out);
+                &:hover, &:focus, &:focus-within {
+                    transform: translateY(-5px);
+                    -webkit-transform: translateY(-5px);
+                    -moz-transform: translateY(-5px);
+                    -ms-transform: translateY(-5px);
+                    -o-transform: translateY(-5px);
+                    >a {
+                        color: $outline-color;
+                    }
+                }
+            }
+            >div.postmetagroup {
+                display: none !important;
+            } 
+            >p.postlist__postdescription {
+                margin:0;
+                text-align: center; 
+                z-index: 2;
+            }
+            &:hover, &:focus, &:focus-within {
+                >a.postlist__featuredimage {
+                    >figure.blogimage {
+                        >img {
+                            transform: scale(1.1);
+}
+                    }
+
+                }
+                >.postlist__posttitle {
+                    transform: translateY(-5px);
+                    -webkit-transform: translateY(-5px);
+                    -moz-transform: translateY(-5px);
+                    -ms-transform: translateY(-5px);
+                    -o-transform: translateY(-5px);
+                    >a {
+                        color: $outline-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{data.layout} == leistungen">
+        <f:then>
+            <f:if condition="{items}">
+                <div class="listgroup listgroup-leistungen">
+                    <ul class="list-group">
+                        <f:for each="{items}" as="content" iteration="iterateRow">
+                            <li class="list-group-item">{content}</li>
+                        </f:for>
+                        <a href="seiten/anfrage" title="Schreib mit gerne eine Mail">Jetzt ein Projekt starten<svg xmlns="http://www.w3.org/2000/svg" width="15.219" height="15.219" viewBox="0 0 15.219 15.219">
+                            <path id="Icon_awesome-arrow-circle-left" data-name="Icon awesome-arrow-circle-left" d="M8.172,15.782a7.61,7.61,0,1,1,7.61-7.61A7.608,7.608,0,0,1,8.172,15.782Zm.887-4.406L6.742,9.154h5.6a.735.735,0,0,0,.736-.736V7.927a.735.735,0,0,0-.736-.736h-5.6L9.059,4.969a.737.737,0,0,0,.012-1.052l-.338-.334a.733.733,0,0,0-1.04,0L3.622,7.651a.733.733,0,0,0,0,1.04l4.072,4.072a.733.733,0,0,0,1.04,0l.338-.334A.737.737,0,0,0,9.059,11.376Z" transform="translate(15.782 15.782) rotate(180)" fill="#27211f"/>
+                             </svg>
+                        </a>
+                    </ul>
+                
+                </div>
+                
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:if condition="{items}">
+                <ul class="list-group">
+                    <f:for each="{items}" as="content" iteration="iterateRow">
+                        <li class="list-group-item">{content}</li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

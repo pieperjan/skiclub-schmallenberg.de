@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="p582046.mittwaldserver.info" id="b127b49d-9d85-41de-a609-6b7a25421553" port="22" nameFormat="DESCRIPTIVE" username="p582046" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="www484.your-server.de" id="0cfe6c39-d46e-4ba5-8180-d449643505e7" port="22" nameFormat="DESCRIPTIVE" username="skiclud_2" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="p496729.mittwaldserver.info" id="995c087b-f555-41ca-8d45-076043bcf783" port="22" nameFormat="DESCRIPTIVE" username="p496729" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

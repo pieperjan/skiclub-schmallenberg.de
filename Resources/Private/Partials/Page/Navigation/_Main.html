@@ -1,0 +1,190 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:variable name="headerClass">bp-page-header navbar navbar-mainnavigation navbar-{theme.navigation.style}</f:variable>
+<f:variable name="headerClass">{headerClass}{f:if(condition: logo.normal, then:' navbar-has-image')}</f:variable>
+<f:variable name="headerClass">{headerClass}{f:if(condition: theme.navigation.type, else:' navbar-top', then:' navbar-{theme.navigation.type} navbar-fixed-{theme.navigation.type}')}</f:variable>
+<f:variable name="output-desktop" value="desktop" />
+<f:variable name="output-mobile" value="mobile" />
+<div class="mobile-click-event mobile"></div>
+<header id="page-header" class="{headerClass}">
+    <div class="container">
+        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}" title="{settings.logo.linktitle}">
+            <f:if condition="{logo.normal}">
+                <f:then>
+                    <img class="navbar-brand-logo-normal" src="{f:uri.image(image: logo.normal)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
+                    <f:if condition="{logo.inverted}">
+                        <img class="navbar-brand-logo-inverted" src="{f:uri.image(image: logo.inverted)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <span>{siteTitle}</span>
+                </f:else>
+            </f:if>
+        </f:link.page>
+        <f:if condition="{mainnavigation}">
+
+            <f:render section="special" arguments="{output:output-mobile}" />
+
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-label="{f:translate(key: 'togglenavigation', extensionName: 'bootstrap_package')}">
+                <span class="navbar-toggle-text">Menu</span>    <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <nav id="mainnavigation" class="collapse navbar-collapse">
+
+                <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
+                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme}" />
+                <f:render section="special" arguments="{output:output-desktop}" />
+                <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
+            </nav>
+
+        </f:if>
+    </div>
+</header>
+<f:comment>
+    <div class="click-event-mobile-nav"></div>
+    <f:section name="special">
+        <div class="wrap-special-nav {output}">
+            <div class="wrap-service">
+                <a href="mailto:hallo@pieperjan.de">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M460.8,68.267H17.067l221.867,182.75L463.309,68.779C462.488,68.539,461.649,68.368,460.8,68.267z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M249.702,286.31c-6.288,5.149-15.335,5.149-21.623,0L0,98.406v294.127c0,9.426,7.641,17.067,17.067,17.067H460.8
+                            c9.426,0,17.067-7.641,17.067-17.067V100.932L249.702,286.31z"/>
+                    </g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                </svg>
+                </a>
+                <a href="https://www.instagram.com/just__website/" target="_blank">
+                    <svg height="511pt" viewBox="0 0 511 511.9" width="511pt" xmlns="http://www.w3.org/2000/svg"><path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/></svg>
+                </a>
+            </div>
+            <div class="wrap-special">
+                <label class="switch dark-mode">
+                <input type="checkbox" class="dark-mode-toggle">
+                <span class="slider round"></span>
+                <span class="switch-text">Dark Mode</span>    
+              </label>
+              <f:comment>
+                <div class="like-button">
+                    <?xml version="1.0"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -28 512.001 512" width="512px" height="512px"><path d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0" fill="#190F0B"/></svg>
+                </div>
+              </f:comment>
+               
+            </div>
+        </div>
+    </f:section>
+</f:comment>
+
+<f:section name="MainNavigation">
+
+    <f:if condition="{menu}">
+        <ul class="navbar-nav">
+            <f:for each="{menu}" as="item">
+                <f:if condition="{item.spacer}">
+                    <f:then>
+        </ul>
+        <ul class="navbar-nav">
+            </f:then>
+            <f:else>
+                <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
+                    <a href="{item.link}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}" {f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}" {f:if(condition: item.children, then:
+                        ' aria-haspopup="true" aria-expanded="false"')}>
+                        <f:if condition="{theme.navigation.icon.enable} && {item.icon}">
+                            <span class="nav-link-icon">
+                                        <f:if condition="{item.icon.0.extension} === svg">
+                                            <f:then>
+                                                <bk2k:inlineSvg image="{item.icon.0}" width="{theme.navigation.icon.width}" height="{theme.navigation.icon.height}" />
+                                            </f:then>
+                                            <f:else>
+                                                <f:image additionalAttributes="{loading: 'lazy'}" image="{item.icon.0}" alt="{item.icon.0.alternative}" title="{item.icon.0.title}" width="{theme.navigation.icon.width}" height="{theme.navigation.icon.height}" />
+                                            </f:else>
+                                        </f:if>
+                                    </span>
+                        </f:if>
+                        <span class="nav-link-text">{item.title}<f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if>
+                        </span>
+                    </a>
+                    <f:if condition="{item.children}">
+                        <ul class="dropdown-menu" aria-labelledby="nav-item-{item.data.uid}">
+                            <f:for each="{item.children}" as="child">
+                                <f:if condition="{child.spacer}">
+                                    <f:then>
+                                        <li class="dropdown-divider"></li>
+                                    </f:then>
+                                    <f:else>
+                                        <li>
+                                            <a href="{child.link}" class="dropdown-item{f:if(condition: child.active, then:' active')}" {f:if(condition: child.target, then: ' target="{child.target}"')} title="{child.title}">
+                                                <f:if condition="{theme.navigation.dropdown.icon.enable} && {child.icon}">
+                                                    <span class="dropdown-icon">
+                                                                <f:if condition="{child.icon.0.extension} === svg">
+                                                                    <f:then>
+                                                                        <bk2k:inlineSvg image="{child.icon.0}" width="{theme.navigation.dropdown.icon.width}" height="{theme.navigation.dropdown.icon.height}" />
+                                                                    </f:then>
+                                                                    <f:else>
+                                                                        <f:image additionalAttributes="{loading: 'lazy'}" image="{child.icon.0}" alt="{child.icon.0.alternative}" title="{child.icon.0.title}" width="{theme.navigation.dropdown.icon.width}" height="{theme.navigation.dropdown.icon.height}" />
+                                                                    </f:else>
+                                                                </f:if>
+                                                            </span>
+                                                </f:if>
+                                                <span class="dropdown-text">{child.title}<f:if condition="{child.current}"> <span class="sr-only">(current)</span></f:if>
+                                </span>
+                                </a>
+                                </li>
+                                </f:else>
+                    </f:if>
+                    </f:for>
+                    </ul>
+    </f:if>
+    </li>
+    </f:else>
+    </f:if>
+    </f:for>
+    </ul>
+    </f:if>
+    <div class="newest-blog-post mobile-nav-post">
+        <f:cObject typoscriptObjectPath="lib.fluidLoadRecord">231</f:cObject>
+    </div>
+
+</f:section>
+
+</html>

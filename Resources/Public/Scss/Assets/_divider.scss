@@ -1,0 +1,10 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.divider {
+    hr {
+        border-top: 3px solid #fff;
+    }
+    &.divider-abstand {
+        opacity: 0;
+    }
+}

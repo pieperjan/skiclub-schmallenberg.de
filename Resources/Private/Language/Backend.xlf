@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
+          product-name="bootstrap_package">
+        <header/>
+        <body>
+            <trans-unit id="option.extralarge">
+                <source>Extra Large</source>
+            </trans-unit>
+            <trans-unit id="ratio.3_4">
+                <source>3:4</source>
+            </trans-unit>
+            <trans-unit id="ratio.2_1">
+                <source>2:1</source>
+            </trans-unit>
+              <trans-unit id="ratio.1_2">
+                <source>1:2</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

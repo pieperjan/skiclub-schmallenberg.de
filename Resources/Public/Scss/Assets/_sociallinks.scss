@@ -1,0 +1,55 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+ 
+div.sociallinks {
+    overflow: visible;
+    ul.sociallinks-list {
+        @include media-breakpoint-down(md) {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+       li.sociallinks-item {
+            @include media-breakpoint-down(md) {
+                margin-right: 30px;
+            }
+           a.sociallinks-link {
+               margin-bottom: 30px;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                @include transition(all 350ms ease-in-out);
+                &:hover, 
+                &:focus,
+                &:focus-within {
+                    transform: translateY(-5px);
+                }
+               span {
+                   &.sociallinks-link-icon {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    opacity: 1;
+                    &:before {
+                        color: $black;
+                    }
+                       svg {
+                           path {
+                                fill: $black;
+                           }
+                       }
+                   }
+                   &.sociallinks-link-label {
+                         color: white;
+                   }
+               }
+           }
+       } 
+    }
+}

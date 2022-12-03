@@ -1,0 +1,55 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.frame-type-header {
+    &.frame-layout-start {
+        height: 100vh;
+        @include media-breakpoint-down(sm) {
+            height: 50vh;
+        }
+        @media (max-width: 767.98px) and (orientation: landscape) {
+            height: 80vh;
+        }
+        @include media-breakpoint-down(xs) {
+            height: 80vh;
+        }
+        >div.frame-container {
+            height: 100%;
+            >div.frame-inner {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                h1, h2, h3, h4, h5 {
+                    font-size: 80px;
+                    line-height: 1.5;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 45px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font: {
+                            size: 35px;
+                        }
+                        line-height: 41px; 
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font: {
+                            size: 24px;
+                        }
+                        line-height: 32px; 
+                        small {
+                            font-size: 16px; 
+                            line-height: 21px;
+                        } 
+                    }
+                    span {
+                        -webkit-text-stroke: 1px $white;
+                        text-stroke: 1px $white;
+                        color: #0000;
+                    }
+                } 
+            }
+        }
+    }
+}

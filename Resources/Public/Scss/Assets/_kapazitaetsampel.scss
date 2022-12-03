@@ -1,0 +1,121 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+body header.bp-page-header > div.container div.wrap-logo {
+    .wrap-anfrage {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin-left: 26px;
+        padding: 12px 24px;
+        background-color: #ffffff38;
+        color: #000;
+        border-radius: 50px;
+        text-decoration: none !important;
+        @include transition(all 300ms ease-in-out);
+        &:hover,
+        &:focus,
+        &:focus-within {
+            border: 2px solid $color-1;
+        }
+
+        @include media-breakpoint-down(xs) {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            right: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #27211f94;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            &.fadeout {
+                bottom: -80px;
+            }
+        }
+
+    }
+    .kapazitaetenampel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $white !important;
+        pointer-events: none;
+        div.kapazitaetenampel-headline {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: baseline;
+            -ms-flex-align: baseline;
+            align-items: baseline;
+            span {
+                font-size: 14px;
+                &.kapazitaetenampel-headline-title {
+                    font-weight: 100;
+                }
+                &.kapazitaetenampel-headline-date {
+                    
+                }
+            }
+        }
+        span.ampel {
+            margin-left: 15px;
+            @include media-breakpoint-down(xs) {
+                margin-left: 10px;
+            }
+            padding: 0 6px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            background-color: #24C73D;
+            border-radius: 19px;
+            font-size: 12px;
+            &.red {
+                background-color: $color-1;  
+            }
+        }
+    }
+    
+    div.stundensatz {
+        position: relative;
+        padding-left: 15px;
+        margin-left: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $white;
+        pointer-events: none;
+        @include media-breakpoint-down(xs) {
+            padding-left: 15px;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            display: block;
+            height: 20px;
+            width: 2px;
+            background-color: $white;  
+        }
+    }
+}

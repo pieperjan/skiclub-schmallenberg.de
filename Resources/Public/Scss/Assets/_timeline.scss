@@ -1,0 +1,42 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.timeline {
+    @include media-breakpoint-down(sm) {
+        padding-left: 28px;
+    }
+    .timeline-item-header-headline {
+        color: $color-1;
+    }    
+    p {
+        color: $black;
+    }
+    div.timeline-item {
+        div.timeline-item-inner {
+            padding: 45px 45px 45px 30px;
+            border-radius: 19px;
+            border: 0;
+            @include media-breakpoint-down(md) {
+                padding: 20px;
+            }
+            @include media-breakpoint-down(sm) {
+                margin-left: 0; 
+            }
+            div.timeline-item-header {
+                .timeline-item-header-headline {
+                    @include media-breakpoint-down(md) {
+                        font-size: 18px;
+                    }
+                }
+            }
+            div.timeline-item-date {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+            }
+            a {
+                color: $color-1;
+                text-decoration: underline;
+            }
+        }
+    }
+}

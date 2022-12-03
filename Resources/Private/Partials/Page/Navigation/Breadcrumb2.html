@@ -1,0 +1,62 @@
+<f:if condition="{theme.breadcrumb.enable}">
+    <f:if condition="{breadcrumb}">
+        <nav class="breadcrumb-section" aria-label="{f:translate(key: 'breadcrumb.label', extensionName: 'bootstrap_package')}">
+            <div class="container">
+                <a href="{mainnavigation.0.link}"><?xml version="1.0" encoding="utf-8"?>
+                    <!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:#333333;}
+                    </style>
+                    <g>
+                        <g>
+                            <path class="st0" d="M123.6,270.1l236.8,236.2c7.8,7.7,20.3,7.7,28.1,0c7.7-7.8,7.7-20.3,0-28.1L165.7,256L388.4,33.9
+                                c7.8-7.7,7.8-20.3,0-28.1c-3.9-3.9-9-5.8-14.1-5.8c-5.1,0-10.1,1.9-14,5.8L123.6,242c-3.7,3.7-5.8,8.8-5.8,14
+                                C117.7,261.3,119.8,266.3,123.6,270.1z"/>
+                        </g>
+                    </g>
+                    </svg>
+                    Zurück zur Startseite</a>
+                <p class="visually-hidden" id="breadcrumb">{f:translate(key: 'breadcrumb', extensionName: 'bootstrap_package')}</p>
+                <ol class="breadcrumb">
+                    <f:for each="{breadcrumb}" as="item">
+                        <f:variable name="isCurrent" value="0" />
+                        <f:if condition="{item.current} && {breadcrumbExtendedValue} == ''">
+                            <f:variable name="isCurrent" value="1" />
+                        </f:if>
+                        <li class="breadcrumb-item{f:if(condition: isCurrent, then: ' active')}"{f:if(condition: isCurrent, then: ' aria-current="page"')}>
+                            <f:if condition="{isCurrent}">
+                                <f:then>
+                                    <f:render section="BreadcrumbTitle" arguments="{item: item, theme: theme}" />
+                                </f:then>
+                                <f:else>
+                                    <a class="breadcrumb-link" href="{item.link}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}">
+                                        <f:render section="BreadcrumbTitle" arguments="{item: item, theme: theme}" />
+                                    </a>
+                                </f:else>
+                            </f:if>
+                        </li>
+                    </f:for>
+                    <f:if condition="{breadcrumbExtendedValue}">
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <span class="breadcrumb-link-title">
+                                <span class="breadcrumb-text">{breadcrumbExtendedValue}</span>
+                            </span>
+                        </li>
+                    </f:if>
+                </ol>
+            </div>
+        </nav>
+    </f:if>
+</f:if>
+<f:section name="BreadcrumbTitle">
+    <span class="breadcrumb-link-title">
+        <f:if condition="{theme.breadcrumb.icon.enable} && {item.icon}">
+            <span class="breadcrumb-icon">
+                <bk2k:icon icon="{item.icon}" height="{theme.breadcrumb.icon.height}" width="{theme.breadcrumb.icon.width}" />
+            </span>
+        </f:if>
+        <span class="breadcrumb-text">{item.title}</span>
+    </span>
+</f:section>

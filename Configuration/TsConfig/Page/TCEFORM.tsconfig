@@ -1,0 +1,122 @@
+TCEFORM {
+tt_content {
+  background_color_class {
+    addItems {
+      primaryhalf = Halbe Fläche Rot
+    }
+    altLabels {
+      primary = Rot
+      secondary = Noch keinen Namen
+    }
+  }
+
+  space_before_class {
+      altLabels {
+        1 = Kein Abstand
+      }
+    }
+    space_after_class {
+
+    }
+   frame_class {
+      addItems {
+        full_width = Full Width
+        full_width_padding = Full Width Padding
+        defaultwithoutpadding = Standard ohne Abstände
+        100height = 100vh
+      }
+    }
+  layout {
+    addItems {
+      colordark = Alles Dark
+    }
+    types {
+      header {
+        addItems {
+           start = Start Element
+         } 
+      }
+      listgroup {
+        addItems {
+           leistungen = Leistungen
+         } 
+      }
+      text {
+         addItems {
+           start = Start Textelement
+           clock = Textelement für Uhrzeitausgabe
+         } 
+      }
+      div {
+        addItems {
+          abstand = Abstand
+        }
+        
+      }
+      image {
+        addItems {
+          fill = Abstand
+          tilt = Tilt Hover Effekt
+          columns = Bilder als Spalten
+          portrait = Portrait
+        }
+      }
+
+     card_group {
+          addItems {
+              100 = masonry
+              101 = vertical-teaser
+              102 = horizontal-teaser
+          }
+          altLabels {
+              100 = Masonry
+              101 = Vertikaler Teaser
+              102 = Horizontaler Teaser
+          }
+      }  
+      image {
+          addItems {
+              logo = Logo
+              partnercustomer = Partner und Kunden
+          }
+      }   
+      gridelements_pi1 {
+        addItems {
+            verticalmittig = Inhalt vertical mittig positionieren
+        }
+      }
+      textpic {
+        addItems {
+            textdown = Text Flexbox down
+            textup = Text Flexbox up
+        }
+      }   
+      textmedia {
+        addItems {
+            news = News
+        }
+      }   
+    }
+  }
+}
+  tx_bootstrappackage_card_group_item {
+        card_layout {
+            addItems {
+                default = Default
+                angebot = Angebotslayout
+            }
+        }
+    }  
+    tx_powermail_domain_model_field {
+      css {
+        addItems {
+          bigbox = Big Check Box
+          thirtythreewidth = 33% Weite 
+          halfwidth = 50% Weite 
+          sixtysixwidth = 66% Weite 
+          fullwidth = 100% Weite 
+          budget = Budget 
+        }
+      }
+    }  
+}

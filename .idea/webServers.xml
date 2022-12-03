@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ff542d64-dc0e-4177-9980-754e8ca7b57b" name="skiclub-schmallenberg.de - old">
+        <fileTransfer rootFolder="/html/typo3-hoehenlift" accessType="SFTP" host="p582046.mittwaldserver.info" port="22" sshConfigId="b127b49d-9d85-41de-a609-6b7a25421553" sshConfig="p582046@p582046.mittwaldserver.info:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="1648117c-de80-4285-96b6-d6d2ff9dee4b" name="skiclub-schmallenberg.de">
+        <fileTransfer accessType="SFTP" host="www484.your-server.de" port="22" sshConfigId="0cfe6c39-d46e-4ba5-8180-d449643505e7" sshConfig="skiclud_2@www484.your-server.de:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d135a2bd-0193-456d-8536-a02233412ad8" name="malermeister-pape.de">
+        <fileTransfer accessType="SFTP" host="p496729.mittwaldserver.info" port="22" sshConfigId="995c087b-f555-41ca-8d45-076043bcf783" sshConfig="p496729@p496729.mittwaldserver.info:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

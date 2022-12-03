@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:variable name="isRootPage" value="{f:if(condition: '{data.is_siteroot} == 1',then: 1)}" />
+
+    <div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')} {f:if(condition: '{isRootPage} == 1', then: 'home', else: 'home-not')}" id="body-bg">
+        <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+
+        <f:render partial="Navigation/Main" arguments="{_all}" />
+        <f:render section="Border" optional="true" />
+        <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+      
+
+        <div id="page-content" class="bp-page-content main-section">
+            <!--TYPO3SEARCH_begin-->
+            <f:render section="Main" />
+            <!--TYPO3SEARCH_end-->
+        </div>
+
+        <footer id="page-footer" class="bp-page-footer">
+
+            <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
+            <f:if condition="{rootPage} != 1">
+                <f:then>
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{rootPage}', colPos: '9', slide: '{theme.pagelayout.{pagelayout}.colPos.9.slide}'}" />
+                    <footer class="site-footer">
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '2', colPos: '9', slide: '{theme.pagelayout.{pagelayout}.colPos.9.slide}'}" />
+                    </footer>
+                </f:then>
+                <f:else>
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{rootPage}', colPos: '9', slide: '{theme.pagelayout.{pagelayout}.colPos.9.slide}'}" />
+                </f:else>
+            </f:if>
+            <f:if condition="{theme.copyright.enable}">
+                <div class="footer-copyright">
+                    <f:render partial="Structure/Copyright" arguments="{_all}" />
+                </div>
+            </f:if>
+            <f:render partial="Structure/FooterMeta" arguments="{_all}" />
+            <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
+        </footer>
+    
+        
+    </div>
+</f:spaceless>
+
+</html>

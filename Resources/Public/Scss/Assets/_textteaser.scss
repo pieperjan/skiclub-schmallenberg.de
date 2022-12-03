@@ -1,0 +1,12 @@
+//@import "../../../../../justwebsite-style/Resources/Public/Scss/variables";
+
+div.textteaser {
+    flex-wrap: unset;
+    flex-direction: row;
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+    div.textteaser-item {
+        width: auto;
+    }
+}

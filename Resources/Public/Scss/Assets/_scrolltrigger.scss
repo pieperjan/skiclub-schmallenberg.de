@@ -1,0 +1,8 @@
+// Now in your CSS add the following classes, this fades the [data-trigger] elements in and out
+.visible, .invisible {
+    opacity: 0.0;
+    transition: opacity 0.5s ease;
+  }
+  .visible {
+    opacity: 1.0;
+  }
